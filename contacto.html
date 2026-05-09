@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SITOP - Contacto | Ingeniería de Confianza</title>
+  <meta name="description" content="Contáctanos en SITOP. Estamos en Tegucigalpa, Honduras. WhatsApp, correo, Instagram y formulario para tu proyecto.">
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <img src="img/logositop.png" alt="Logo SITOP">
+        <span>SITOP</span>
+      </div>
+      <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="nosotros.html">Quiénes somos</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="proyectos.html">Proyectos</a></li>
+        <li><a href="contacto.html" class="active">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero-contacto">
+    <div class="container">
+      <h1><span class="highlight">Contáctanos</span></h1>
+      <p>¿Listo para empezar tu proyecto?</p>
+    </div>
+  </section>
+
+  <section class="contacto-completo" style="padding: 100px 0 120px;">
+    <div class="container">
+
+      <div class="contact-wrapper">
+
+        <div class="contact-ubicacion">
+          <h3 class="ubicacion-title">Cómo encontrarnos</h3>
+          <div class="ubicacion-direccion">
+            <div>
+              <strong>Barrio Buena Vista</strong>
+              <p>Tatumbla, Francisco Morazán, Honduras</p>
+            </div>
+          </div>
+          <div class="map-container">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3871.0752549048348!2d-87.104963!3d14.013552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTTCsDAwJzQ4LjgiTiA4N8KwMDYnMTcuOSJX!5e0!3m2!1ses-419!2shn!4v1777693920972!5m2!1ses-419!2shn" 
+              width="100%" 
+              height="250" 
+              style="border:0; border-radius: 16px;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+
+        <div class="contact-formulario">
+
+          <div class="contacto-rapido">
+            <a href="https://wa.me/50431836574" target="_blank" class="contacto-enlace">
+              <i class="fab fa-whatsapp"></i>
+              <div>
+                <span>WhatsApp</span>
+                <strong>+504 3183-6574</strong>
+              </div>
+            </a>
+            <a href="https://instagram.com/sitophn" target="_blank" class="contacto-enlace">
+              <i class="fab fa-instagram"></i>
+              <div>
+                <span>Instagram</span>
+                <strong>@sitophn</strong>
+              </div>
+            </a>
+            <a href="mailto:sitophn@gmail.com" class="contacto-enlace">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <span>Correo</span>
+                <strong>sitophn@gmail.com</strong>
+              </div>
+            </a>
+          </div>
+
+          <form class="contact-form" name="contacto" method="POST" data-netlify="true">
+            <input type="text" name="nombre" placeholder="Nombre completo" required>
+            <input type="email" name="correo" placeholder="Correo electrónico" required>
+            <input type="text" name="servicio" placeholder="Servicio que necesitas">
+            <textarea name="mensaje" placeholder="Cuéntanos sobre tu proyecto..." rows="5" required></textarea>
+            <button type="submit" class="btn-primary">Enviar mensaje</button>
+          </form>
+        </div>
+
+      </div>
+
+      <div class="redes-sociales">
+        <p class="redes-titulo">Síguenos en nuestras redes</p>
+        <div class="redes-enlaces">
+          <a href="https://instagram.com/sitophn" target="_blank" class="redes-link">
+            <i class="fab fa-instagram"></i>
+            <span>Instagram</span>
+          </a>
+          <a href="https://www.facebook.com/share/1DtmW3cJNy/" target="_blank" class="redes-link">
+            <i class="fab fa-facebook-f"></i>
+            <span>Facebook</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+    <!-- ==================== FOOTER ==================== -->
+  <footer>
+    <div class="container">
+
+      <!-- Fila superior: Logo a la izquierda, redes a la derecha -->
+      <div class="footer-top">
+        <div class="footer-brand">
+          <strong>SITOP</strong>
+          <p>Ingeniería de confianza</p>
+        </div>
+        <div class="footer-social">
+          <a href="https://instagram.com/sitophn" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/share/1DtmW3cJNy/" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://wa.me/50431836574" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <!-- Fila media: Enlaces de navegación -->
+      <div class="footer-nav">
+        <a href="index.html">Inicio</a>
+        <a href="nosotros.html">Quiénes somos</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="proyectos.html">Proyectos</a>
+        <a href="contacto.html">Contacto</a>
+      </div>
+
+      <!-- Fila inferior: Ubicación y copyright -->
+      <div class="footer-bottom">
+        <div class="footer-ubicacion">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Barrio Buena Vista, Tatumbla, Francisco Morazán, Honduras</span>
+        </div>
+        <div class="footer-copyright">
+          <p>© 2025 SITOP. Todos los derechos reservados.</p>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

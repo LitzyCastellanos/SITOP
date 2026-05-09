@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <!-- Configuración básica del navegador -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Título que aparece en la pestaña del navegador -->
+  <title>SITOP - Ingeniería de Confianza</title>
+
+  <!-- Descripción para Google (SEO) -->
+  <meta name="description"
+    content="Servicios de Ingeniería y Topografía en Tegucigalpa, Honduras. Levantamientos topográficos, diseño de viviendas, supervisión de obras y más.">
+
+  <!-- Enlace a Google Fonts (fuentes bonitas) -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <!-- Enlace a nuestro archivo de estilos -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Enlace de emojis  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- ==================== NAVBAR ==================== -->
+  <nav class="navbar">
+    <div class="nav-container">
+
+      <!-- Logo y nombre -->
+      <div class="nav-logo">
+        <img src="img/logositop.png" alt="Logo SITOP">
+        <span>SITOP</span>
+      </div>
+
+      <!-- Botón hamburguesa (solo visible en celular) -->
+      <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Links de navegación -->
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="nosotros.html">Quiénes somos</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="proyectos.html">Proyectos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+
+    </div>
+  </nav>
+
+  <!-- ==================== HERO SLIDER (CARRUSEL) ==================== -->
+  <section class="hero-slider" id="inicio">
+    <div class="slider-container">
+
+      <!-- Slide 1 - SITOP -->
+      <div class="slide active"
+        style="background-image: linear-gradient(135deg, rgba(47, 65, 86, 0.88) 0%, rgba(86, 124, 141, 0.85) 100%), url('img/hero-carrusel/hero1.jpg');">
+        <div class="slide-content">
+          <h1>SITOP</h1>
+          <p class="hero-eslogan">Ingeniería de Confianza</p>
+          <p class="hero-objetivo">Garantizamos calidad, precisión y cumplimiento en cada proyecto que realizamos.</p>
+          <div class="hero-btns">
+            <a href="#contacto" class="btn-primary">Cotiza tu proyecto</a>
+            <a href="#servicios" class="btn-outline">Ver servicios</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 - Proyectos de Calidad -->
+      <div class="slide"
+        style="background-image: linear-gradient(135deg, rgba(47, 65, 86, 0.88) 0%, rgba(86, 124, 141, 0.85) 100%), url('img/hero-carrusel/hero2.jpg');">
+        <div class="slide-content">
+          <h1>Proyectos que <span class="highlight">Construyen Futuro</span></h1>
+          <p class="hero-objetivo">Nos especializamos en obras civiles y supervisión con los más altos estándares de
+            calidad. Tu inversión, en las mejores manos.</p>
+          <div class="hero-btns">
+            <a href="#contacto" class="btn-primary">Empieza tu proyecto</a>
+            <a href="#servicios" class="btn-outline">Ver servicios</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 - Ingenieros Certificados -->
+      <div class="slide"
+        style="background-image: linear-gradient(135deg, rgba(47, 65, 86, 0.88) 0%, rgba(86, 124, 141, 0.85) 100%), url('img/hero-carrusel/hero3.jpg');">
+        <div class="slide-content">
+          <h1>Ingenieros <span class="highlight">Especializados</span></h1>
+          <p class="hero-objetivo">Talento humano y tecnología de punta para resultados que inspiran confianza.</p>
+          <div class="hero-btns">
+            <a href="#contacto" class="btn-primary">Trabaja con nosotros</a>
+            <a href="#servicios" class="btn-outline">Ver servicios</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Flechas de navegación -->
+      <div class="slider-arrow slider-arrow-left" id="prevSlide">❮</div>
+      <div class="slider-arrow slider-arrow-right" id="nextSlide">❯</div>
+
+      <!-- Puntos indicadores -->
+      <div class="slider-dots" id="sliderDots">
+        <div class="dot active" data-slide="0"></div>
+        <div class="dot" data-slide="1"></div>
+        <div class="dot" data-slide="2"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== QUIÉNES SOMOS ==================== -->
+<section class="nosotros" id="nosotros">
+  <div class="container">
+
+    <div class="nos-grid">
+      
+      <!-- COLUMNA IZQUIERDA: texto + tarjetas -->
+      <div class="nos-left">
+        <span class="section-label fade-up">Quiénes somos</span>
+        <h2 class="section-title fade-up delay-1">
+  Profesionales<br>comprometidos con tu obra
+</h2>
+        <p class="section-text fade-up delay-2">
+          <strong>SITOP — Servicios de Ingeniería y Topografía S. de R.L.</strong> es una empresa hondureña especializada en levantamientos topográficos, diseño de viviendas, supervisión de obras y más. Operamos con tecnología RTK de punta y un equipo de ingenieros certificados en Tegucigalpa.
+        </p>
+
+        <!-- Tarjetas de Misión y Visión -->
+        <div class="accordion fade-up delay-3">
+
+  <div class="accordion-item">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+      <span><i class="fas fa-bullseye"></i> Misión</span>
+      <i class="fas fa-plus accordion-icon"></i>
+    </button>
+    <div class="accordion-body">
+      <p>Brindar servicios integrales de ingeniería, construcción y topografía con altos estándares de calidad, seguridad y responsabilidad, contribuyendo al desarrollo de proyectos eficientes y sostenibles, satisfaciendo las necesidades de nuestros clientes mediante un equipo profesional y tecnología especializada.</p>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <button class="accordion-header" onclick="toggleAccordion(this)">
+      <span><i class="fas fa-eye"></i> Visión</span>
+      <i class="fas fa-plus accordion-icon"></i>
+    </button>
+    <div class="accordion-body">
+      <p>Ser una empresa líder y reconocida a nivel nacional en el sector de la construcción, ingeniería y topografía, destacándonos por la excelencia en nuestros servicios, la innovación en nuestros procesos y el compromiso con el crecimiento y progreso de las comunidades donde operamos.</p>
+    </div>
+  </div>
+        </div>
+</div>
+
+      <!-- COLUMNA DERECHA: video + badges -->
+      <div class="photo-col fade-up delay-2">
+        <div class="badge-calidad">
+          <div class="numero" id="qualityCount">0</div>
+          <div class="texto">Calidad de trabajo</div>
+        </div>
+
+        <div class="video-frame">
+          <video autoplay muted loop playsinline>
+            <source src="img/PinDown.io_@BeesIndustries_1777778572.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="badge-experiencia">
+          <div class="numero" id="yearsCount">0</div>
+          <div class="texto">años de experiencia</div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+  <!-- ==================== SERVICIOS (TARJETAS CON IMÁGENES, FONDO OSCURO) ==================== -->
+  <section class="servicios" id="servicios">
+    <div class="container">
+
+      <span class="section-label">Nuestros servicios</span>
+      <h2 class="section-title">Todo lo que necesitas para tu proyecto</h2>
+
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <img src="img/servicios-index/supervision-obra.jpg" alt="Supervisión de Obra">
+          <div class="project-info">
+            <h4>Supervisión de Obra</h4>
+            <p>Supervisamos tu obra paso a paso, verificando calidad, materiales y plazos de entrega.</p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="img/servicios-index/levantamientos.jpg" alt="Levantamiento topográficos">
+          <div class="project-info">
+            <h4>Levantamientos Topográficos</h4>
+            <p>Realizamos estudios topográficos precisos: levantamientos, planimetrías, altimetrías y replanteos.</p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="img/servicios-index/diseño-viviendas.jpg" alt="Diseño de vivienda">
+          <div class="project-info">
+            <h4>Diseño de viviendas</h4>
+            <p>Diseñamos tu vivienda a medida: planos, distribución de espacios, estructuras y acabados.</p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="img/servicios-index/lotificacion.jpg" alt="Lotificación">
+          <div class="project-info">
+            <h4>Lotificación de terrenos</h4>
+            <p>Dividimos y organizamos tu terreno en lotes con medidas exactas, trazado de calles, áreas verdes y
+              servicios básicos.</p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="img/servicios-index/avaluos.jpg" alt="Avalúos">
+          <div class="project-info">
+            <h4>Avalúos</h4>
+            <p>Realizamos avalúos profesionales de terrenos y propiedades. Conoce el valor real de tu inmueble para
+              comprar, vender o tramitar créditos.</p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="img/servicios-index/presupuesto.webp" alt="Elaboración de presupuestos">
+          <div class="project-info">
+            <h4>Elaboración de presupuestos</h4>
+            <p>Presupuestos detallados y transparentes para que conozcas el costo real de tu obra antes de iniciar.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+<!-- ==================== PROYECTOS DESTACADOS (INDEX) ==================== -->
+<section class="proyectos-destacados" id="proyectos">
+  <div class="container">
+    <div class="titulos-escritos">
+    <span class="section-label">Selección</span>
+    <h2 class="section-title">Proyectos Destacados</h2>
+
+    <div class="destacados-grid">
+    
+    <!-- Proyecto 1: Choluteca -->
+<div class="destacado-card" data-proyecto="1">
+  <div class="destacado-img">
+    <img src="img/pavimento-choluteca/pavcholu1.png" alt="Pavimento Choluteca">
+    <div class="destacado-overlay">
+      <button class="btn-explorar" onclick="openModal(1)">Explorar →</button>
+    </div>
+  </div>
+  <h3>Pavimento Hidráulico</h3>
+</div>
+
+<!-- Proyecto 2: Valla Publicitaria -->
+<div class="destacado-card" data-proyecto="2">
+  <div class="destacado-img">
+    <img src="img/valla/vallaportada.png" alt="Valla publicitaria">
+    <div class="destacado-overlay">
+      <button class="btn-explorar" onclick="openModal(2)">Explorar →</button>
+    </div>
+  </div>
+  <h3>Valla Publicitaria</h3>
+</div>
+
+<!-- Proyecto 3: Tencoa -->
+<div class="destacado-card" data-proyecto="3">
+  <div class="destacado-img">
+    <img src="img/pavimento-tencoa/paviportada.jpg" alt="Pavimento Tencoa">
+    <div class="destacado-overlay">
+      <button class="btn-explorar" onclick="openModal(3)">Explorar →</button>
+    </div>
+  </div>
+  <h3>Pavimento Tencoa</h3>
+</div>
+</div>
+    </div>
+  </div>
+</section>
+<div class="separador-linea"></div>
+<!-- ==================== MODAL (VENTANA EMERGENTE) ==================== -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="modal-close" onclick="closeModal()">&times;</span>
+    
+    <div class="modal-grid">
+      <!-- Carrusel de imágenes -->
+      <div class="modal-gallery">
+        <div class="carousel-container">
+          <button class="carousel-btn prev" onclick="prevImage()">❮</button>
+          <div class="gallery-main">
+            <img id="mainImage" src="" alt="Imagen principal">
+          </div>
+          <button class="carousel-btn next" onclick="nextImage()">❯</button>
+        </div>
+        <div class="gallery-thumbs" id="thumbnails"></div>
+      </div>
+      
+      <!-- Información del proyecto -->
+      <div class="modal-info">
+        <h2 id="proyectoTitulo"></h2>
+        <div class="modal-ubicacion" id="proyectoUbicacion"></div>
+        <p class="modal-descripcion" id="proyectoDescripcion"></p>
+        <div class="modal-detalles">
+          <p><strong>Cliente:</strong> <span id="proyectoCliente"></span></p>
+          <p><strong>Servicio:</strong> <span id="proyectoServicio"></span></p>
+            <p><strong>Orden de inicio:</strong> <span id="proyectoFechaInicio"></span></p>
+  <p><strong>Recepción final:</strong> <span id="proyectoFechaRecepcion"></span></p>
+        </div>
+        <a href="proyectos.html" class="btn-ver-todos">Ver todos los proyectos →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- ==================== CONTACTO ==================== -->
+  <section class="contacto" id="contacto">
+    <div class="container">
+
+      <span class="section-label">Contáctanos</span>
+      <h2 class="section-title">¿Listo para empezar tu proyecto?</h2>
+
+      <div class="contact-wrapper">
+
+        <!-- Columna izquierda: Cómo encontrarnos (estilo Postensa) -->
+        <div class="contact-ubicacion">
+          <h3 class="ubicacion-title">Cómo encontrarnos</h3>
+
+          <!-- Dirección destacada -->
+          <div class="ubicacion-direccion">
+            <div>
+              <strong>Barrio Buena Vista</strong>
+              <p>Tatumbla, Francisco Morazán, Honduras</p>
+            </div>
+          </div>
+
+          <!-- Mapa -->
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3871.0752549048348!2d-87.104963!3d14.013552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTTCsDAwJzQ4LjgiTiA4N8KwMDYnMTcuOSJX!5e0!3m2!1ses-419!2shn!4v1777693920972!5m2!1ses-419!2shn"
+              width="100%" height="250" style="border:0; border-radius: 16px;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+
+        <!-- Columna derecha: Formulario + datos de contacto -->
+        <div class="contact-formulario">
+
+          <!-- Datos de contacto rápidos -->
+          <div class="contacto-rapido">
+
+            <a href="https://wa.me/50431836574" target="_blank" class="contacto-enlace">
+              <i class="fab fa-whatsapp"></i>
+              <div>
+                <span>WhatsApp</span>
+                <strong>+504 3183-6574</strong>
+              </div>
+            </a>
+
+            <a href="https://instagram.com/sitophn" target="_blank" class="contacto-enlace">
+              <i class="fab fa-instagram"></i>
+              <div>
+                <span>Instagram</span>
+                <strong>@sitophn</strong>
+              </div>
+            </a>
+
+            <a href="mailto:sitophn@gmail.com" class="contacto-enlace">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <span>Correo</span>
+                <strong>sitophn@gmail.com</strong>
+              </div>
+            </a>
+
+          </div>
+
+          <!-- Formulario -->
+          <form class="contact-form" name="contacto" method="POST" data-netlify="true">
+            <input type="text" name="nombre" placeholder="Nombre completo" required>
+            <input type="email" name="correo" placeholder="Correo electrónico" required>
+            <input type="text" name="servicio" placeholder="Servicio que necesitas">
+            <textarea name="mensaje" placeholder="Cuéntanos sobre tu proyecto..." rows="5" required></textarea>
+
+            <button type="submit" class="btn-primary">Enviar mensaje</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Redes sociales - Síguenos -->
+      <div class="redes-sociales">
+        <p class="redes-titulo">Síguenos en nuestras redes</p>
+        <div class="redes-enlaces">
+          <a href="https://instagram.com/sitophn" target="_blank" class="redes-link">
+            <i class="fab fa-instagram"></i>
+            <span>Instagram</span>
+          </a>
+          <a href="https://www.facebook.com/share/1DtmW3cJNy/" target="_blank" class="redes-link">
+            <i class="fab fa-facebook-f"></i>
+            <span>Facebook</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer>
+    <div class="container">
+
+      <!-- Fila superior: Logo a la izquierda, redes a la derecha -->
+      <div class="footer-top">
+        <div class="footer-brand">
+          <strong>SITOP</strong>
+          <p>Ingeniería de confianza</p>
+        </div>
+        <div class="footer-social">
+          <a href="https://instagram.com/sitophn" target="_blank" class="social-icon"><i
+              class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/share/1DtmW3cJNy/" target="_blank" class="social-icon"><i
+              class="fab fa-facebook-f"></i></a>
+          <a href="https://wa.me/50431836574" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <!-- Fila media: Enlaces de navegación -->
+      <div class="footer-nav">
+        <a href="index.html">Inicio</a>
+        <a href="nosotros.html">Quiénes somos</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="proyectos.html">Proyectos</a>
+        <a href="contacto.html">Contacto</a>
+      </div>
+
+      <!-- Fila inferior: Ubicación y copyright -->
+      <div class="footer-bottom">
+        <div class="footer-ubicacion">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Barrio Buena Vista, Tatumbla, Francisco Morazán, Honduras</span>
+        </div>
+        <div class="footer-copyright">
+          <p>© 2025 SITOP. Todos los derechos reservados.</p>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Enlace a nuestro archivo JavaScript (siempre al final del body) -->
+  <script src="script.js"></script>
+
+</body>
+
+</html>

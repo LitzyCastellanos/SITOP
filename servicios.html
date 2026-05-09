@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SITOP - Nuestros Servicios | Ingeniería de Confianza</title>
+  <meta name="description" content="Servicios de Ingeniería y Topografía en Tegucigalpa, Honduras. Levantamientos topográficos, diseño de viviendas, supervisión de obras y más.">
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <img src="img/logositop.png" alt="Logo SITOP">
+        <span>SITOP</span>
+      </div>
+      <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="nosotros.html">Quiénes somos</a></li>
+        <li><a href="servicios.html" class="active">Servicios</a></li>
+        <li><a href="proyectos.html">Proyectos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero-servicios">
+    <div class="container">
+      <h1>Nuestros <span class="highlight">Servicios</span></h1>
+      <p>Soluciones integrales para tu proyecto de construcción</p>
+    </div>
+  </section>
+
+  <!-- Servicios en tarjetas -->
+ <!-- Carrusel de servicios -->
+<section class="servicios-cinta">
+  <div class="cinta-header">
+    <span class="section-label">Lo que ofrecemos</span>
+    <h2 class="section-title">Nuestros Servicios</h2>
+  </div>
+
+  <div class="cinta-wrapper">
+    <button class="cinta-btn cinta-prev" onclick="moverCinta(-1)">&#10094;</button>
+
+    <div class="cinta-track-container">
+      <div class="cinta-track" id="cintaTrack">
+
+        <div class="cinta-card" onclick="abrirCard(this)">
+          <img src="img/servicios-sitop/topografia..jpg" alt="Topografía">
+          <div class="cinta-overlay">
+            <div class="cinta-icon"><i class="fas fa-map-marked-alt"></i></div>
+            <h3>Topografía</h3>
+            <div class="cinta-lista">
+              <p><i class="fas fa-check-circle"></i> Levantamientos topográficos</p>
+              <p><i class="fas fa-check-circle"></i> Replanteo de obra</p>
+              <p><i class="fas fa-check-circle"></i> Nivelaciones de precisión</p>
+              <p><i class="fas fa-check-circle"></i> Georreferenciación</p>
+              <p><i class="fas fa-check-circle"></i> GPS RTK</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cinta-card" onclick="abrirCard(this)">
+          <img src="img/servicios-sitop/construccion.jpg" alt="Construcción">
+          <div class="cinta-overlay">
+            <div class="cinta-icon"><i class="fas fa-city"></i></div>
+            <h3>Construcción</h3>
+            <div class="cinta-lista">
+              <p><i class="fas fa-check-circle"></i> Obras civiles en general</p>
+              <p><i class="fas fa-check-circle"></i> Infraestructura y carreteras</p>
+              <p><i class="fas fa-check-circle"></i> Urbanizaciones</p>
+              <p><i class="fas fa-check-circle"></i> Remodelaciones</p>
+              <p><i class="fas fa-check-circle"></i> Supervisión de obra</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cinta-card" onclick="abrirCard(this)">
+          <img src="img/servicios-sitop/diseno.jpg" alt="Diseño">
+          <div class="cinta-overlay">
+            <div class="cinta-icon"><i class="fas fa-home"></i></div>
+            <h3>Diseño de Viviendas</h3>
+            <div class="cinta-lista">
+              <p><i class="fas fa-check-circle"></i> Planos arquitectónicos</p>
+              <p><i class="fas fa-check-circle"></i> Diseño estructural</p>
+              <p><i class="fas fa-check-circle"></i> Lotificación de terrenos</p>
+              <p><i class="fas fa-check-circle"></i> Planos para permisos</p>
+              <p><i class="fas fa-check-circle"></i> Avalúos</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cinta-card" onclick="abrirCard(this)">
+          <img src="img/servicios-sitop/presupuestos.jpg" alt="Presupuestos">
+          <div class="cinta-overlay">
+            <div class="cinta-icon"><i class="fas fa-calculator"></i></div>
+            <h3>Presupuestos</h3>
+            <div class="cinta-lista">
+              <p><i class="fas fa-check-circle"></i> Detalle por partidas</p>
+              <p><i class="fas fa-check-circle"></i> Precios unitarios</p>
+              <p><i class="fas fa-check-circle"></i> Sin costos ocultos</p>
+              <p><i class="fas fa-check-circle"></i> Consultoría personalizada</p>
+              <p><i class="fas fa-check-circle"></i> Gestión de proyecto</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cinta-card" onclick="abrirCard(this)">
+          <img src="img/servicios-sitop/software.jpg" alt="Software">
+          <div class="cinta-overlay">
+            <div class="cinta-icon"><i class="fas fa-laptop-code"></i></div>
+            <h3>Software Especializado</h3>
+            <div class="cinta-lista">
+              <p><i class="fas fa-check-circle"></i> AutoCAD 2D / Civil 3D</p>
+              <p><i class="fas fa-check-circle"></i> Revit</p>
+              <p><i class="fas fa-check-circle"></i> CYPECAD</p>
+              <p><i class="fas fa-check-circle"></i> ArcGIS</p>
+              <p><i class="fas fa-check-circle"></i> Modelos digitales 3D</p>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+    <button class="cinta-btn cinta-next" onclick="moverCinta(1)">&#10095;</button>
+  </div>
+
+  <div class="cinta-dots" id="cintaDots">
+    <span class="cinta-dot active" onclick="irA(0)"></span>
+    <span class="cinta-dot" onclick="irA(1)"></span>
+    <span class="cinta-dot" onclick="irA(2)"></span>
+    <span class="cinta-dot" onclick="irA(3)"></span>
+    <span class="cinta-dot" onclick="irA(4)"></span>
+  </div>
+
+  <!-- CTA -->
+  <div class="servicios-cta">
+    <h3>¿Necesitas alguno de estos servicios?</h3>
+    <p>Contáctanos y te daremos una cotización personalizada</p>
+    <a href="contacto.html" class="btn-primary">Solicita cotización</a>
+  </div>
+
+</section>
+
+    <!-- ==================== FOOTER ==================== -->
+  <footer>
+    <div class="container">
+
+      <!-- Fila superior: Logo a la izquierda, redes a la derecha -->
+      <div class="footer-top">
+        <div class="footer-brand">
+          <strong>SITOP</strong>
+          <p>Ingeniería de confianza</p>
+        </div>
+        <div class="footer-social">
+          <a href="https://instagram.com/sitophn" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/share/1DtmW3cJNy/" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://wa.me/50431836574" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <!-- Fila media: Enlaces de navegación -->
+      <div class="footer-nav">
+        <a href="index.html">Inicio</a>
+        <a href="nosotros.html">Quiénes somos</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="proyectos.html">Proyectos</a>
+        <a href="contacto.html">Contacto</a>
+      </div>
+
+      <!-- Fila inferior: Ubicación y copyright -->
+      <div class="footer-bottom">
+        <div class="footer-ubicacion">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Barrio Buena Vista, Tatumbla, Francisco Morazán, Honduras</span>
+        </div>
+        <div class="footer-copyright">
+          <p>© 2025 SITOP. Todos los derechos reservados.</p>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+ <script>
+  // Evita errores del slider que no existe en esta página
+  window.PAGINA_SERVICIOS = true;
+</script>
+<script src="script.js"></script>
+</body>
+</html>
