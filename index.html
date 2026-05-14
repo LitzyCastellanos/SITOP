@@ -25,36 +25,30 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
-<body>
+<body id="top">
 
   <!-- ==================== NAVBAR ==================== -->
-  <nav class="navbar">
-    <div class="nav-container">
-
-      <!-- Logo y nombre -->
-      <div class="nav-logo">
-        <img src="img/logositop.png" alt="Logo SITOP">
-        <span>SITOP</span>
-      </div>
-
-      <!-- Botón hamburguesa (solo visible en celular) -->
-      <button class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <!-- Links de navegación -->
-      <ul class="nav-links" id="nav-links">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="nosotros.html">Quiénes somos</a></li>
-        <li><a href="servicios.html">Servicios</a></li>
-        <li><a href="proyectos.html">Proyectos</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-
+ <nav class="navbar">
+  <div class="nav-container">
+    <div class="nav-logo">
+      <a href="#top">
+        <img src="img/sitop-logo.png" alt="Logo SITOP">
+      </a>
     </div>
-  </nav>
+    <button class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="nosotros.html">Quiénes somos</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="proyectos.html">Proyectos</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </div>
+</nav>
 
   <!-- ==================== HERO SLIDER (CARRUSEL) ==================== -->
   <section class="hero-slider" id="inicio">
@@ -246,85 +240,76 @@
 <section class="proyectos-destacados" id="proyectos">
   <div class="container">
     <div class="titulos-escritos">
-    <span class="section-label">Selección</span>
-    <h2 class="section-title">Proyectos Destacados</h2>
+      <span class="section-label">Selección</span>
+      <h2 class="section-title">Proyectos Destacados</h2>
 
-    <div class="destacados-grid">
-    
-    <!-- Proyecto 1: Choluteca -->
-<div class="destacado-card" data-proyecto="1">
-  <div class="destacado-img">
-    <img src="img/pavimento-choluteca/pavcholu1.png" alt="Pavimento Choluteca">
-    <div class="destacado-overlay">
-      <button class="btn-explorar" onclick="openModal(1)">Explorar →</button>
-    </div>
-  </div>
-  <h3>Pavimento Hidráulico</h3>
-</div>
+      <div class="destacados-grid">
 
-<!-- Proyecto 2: Valla Publicitaria -->
-<div class="destacado-card" data-proyecto="2">
-  <div class="destacado-img">
-    <img src="img/valla/vallaportada.png" alt="Valla publicitaria">
-    <div class="destacado-overlay">
-      <button class="btn-explorar" onclick="openModal(2)">Explorar →</button>
-    </div>
-  </div>
-  <h3>Valla Publicitaria</h3>
-</div>
+        <!-- Proyecto 1: Choluteca -->
+        <div class="destacado-card" data-proyecto="1">
+          <div class="destacado-img">
+            <img src="img/pavimento-choluteca/pavcholu1.png" alt="Pavimento Choluteca">
+            <div class="destacado-overlay">
+              <button class="btn-explorar" onclick="openModal(1)">Explorar →</button>
+            </div>
+          </div>
+          <h3>Pavimento Hidráulico</h3>
+        </div>
 
-<!-- Proyecto 3: Tencoa -->
-<div class="destacado-card" data-proyecto="3">
-  <div class="destacado-img">
-    <img src="img/pavimento-tencoa/paviportada.jpg" alt="Pavimento Tencoa">
-    <div class="destacado-overlay">
-      <button class="btn-explorar" onclick="openModal(3)">Explorar →</button>
-    </div>
-  </div>
-  <h3>Pavimento Tencoa</h3>
-</div>
-</div>
+        <!-- Proyecto 2: Valla Publicitaria -->
+        <div class="destacado-card" data-proyecto="2">
+          <div class="destacado-img">
+            <img src="img/valla/vallaportada.png" alt="Valla publicitaria">
+            <div class="destacado-overlay">
+              <button class="btn-explorar" onclick="openModal(2)">Explorar →</button>
+            </div>
+          </div>
+          <h3>Valla Publicitaria</h3>
+        </div>
+
+        <!-- Proyecto 3: Tencoa -->
+        <div class="destacado-card" data-proyecto="3">
+          <div class="destacado-img">
+            <img src="img/pavimento-tencoa/paviportada.jpg" alt="Pavimento Tencoa">
+            <div class="destacado-overlay">
+              <button class="btn-explorar" onclick="openModal(3)">Explorar →</button>
+            </div>
+          </div>
+          <h3>Pavimento Tencoa</h3>
+        </div>
+
+      </div>
     </div>
   </div>
 </section>
 <div class="separador-linea"></div>
+
 <!-- ==================== MODAL (VENTANA EMERGENTE) ==================== -->
 <div id="modal" class="modal">
-  <div class="modal-content">
+  <div class="modal-content modal-content--galeria">
     <span class="modal-close" onclick="closeModal()">&times;</span>
-    
-    <div class="modal-grid">
-      <!-- Carrusel de imágenes -->
-      <div class="modal-gallery">
-        <div class="carousel-container">
-          <button class="carousel-btn prev" onclick="prevImage()">❮</button>
-          <div class="gallery-main">
-            <img id="mainImage" src="" alt="Imagen principal">
-          </div>
-          <button class="carousel-btn next" onclick="nextImage()">❯</button>
-        </div>
-        <div class="gallery-thumbs" id="thumbnails"></div>
-      </div>
-      
-      <!-- Información del proyecto -->
-      <div class="modal-info">
-        <h2 id="proyectoTitulo"></h2>
-        <div class="modal-ubicacion" id="proyectoUbicacion"></div>
-        <p class="modal-descripcion" id="proyectoDescripcion"></p>
-        <div class="modal-detalles">
-          <p><strong>Cliente:</strong> <span id="proyectoCliente"></span></p>
-          <p><strong>Servicio:</strong> <span id="proyectoServicio"></span></p>
-            <p><strong>Orden de inicio:</strong> <span id="proyectoFechaInicio"></span></p>
-  <p><strong>Recepción final:</strong> <span id="proyectoFechaRecepcion"></span></p>
+
+    <div class="modal-galeria-wrap">
+
+      <!-- Cabecera -->
+      <div class="modal-galeria-header">
+        <div>
+          <h2 id="proyectoTitulo"></h2>
+          <p class="modal-ubicacion" id="proyectoUbicacion"></p>
         </div>
         <a href="proyectos.html" class="btn-ver-todos">Ver todos los proyectos →</a>
       </div>
+
+      <!-- Mosaico -->
+      <div class="modal-mosaico" id="modalMosaico">
+        <!-- Se genera con JS -->
+      </div>
+
     </div>
   </div>
 </div>
 
-
-  <!-- ==================== CONTACTO ==================== -->
+<!-- ==================== CONTACTO ==================== -->
   <section class="contacto" id="contacto">
     <div class="container">
 
@@ -417,48 +402,43 @@
     </div>
   </section>
 
-  <!-- ==================== FOOTER ==================== -->
   <footer>
-    <div class="container">
+  <div class="container">
 
-      <!-- Fila superior: Logo a la izquierda, redes a la derecha -->
-      <div class="footer-top">
-        <div class="footer-brand">
-          <strong>SITOP</strong>
-          <p>Ingeniería de confianza</p>
-        </div>
-        <div class="footer-social">
-          <a href="https://instagram.com/sitophn" target="_blank" class="social-icon"><i
-              class="fab fa-instagram"></i></a>
-          <a href="https://www.facebook.com/share/1DtmW3cJNy/" target="_blank" class="social-icon"><i
-              class="fab fa-facebook-f"></i></a>
-          <a href="https://wa.me/50431836574" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-        </div>
+    <!-- Fila superior: Logo a la izquierda, redes a la derecha -->
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="img/sitop-logo.png" alt="Logo SITOP" class="footer-logo-img">
       </div>
-
-      <!-- Fila media: Enlaces de navegación -->
-      <div class="footer-nav">
-        <a href="index.html">Inicio</a>
-        <a href="nosotros.html">Quiénes somos</a>
-        <a href="servicios.html">Servicios</a>
-        <a href="proyectos.html">Proyectos</a>
-        <a href="contacto.html">Contacto</a>
+      <div class="footer-social">
+        <a href="https://instagram.com/sitophn" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/share/1DtmW3cJNy/" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://wa.me/50431836574" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
       </div>
-
-      <!-- Fila inferior: Ubicación y copyright -->
-      <div class="footer-bottom">
-        <div class="footer-ubicacion">
-          <i class="fas fa-map-marker-alt"></i>
-          <span>Barrio Buena Vista, Tatumbla, Francisco Morazán, Honduras</span>
-        </div>
-        <div class="footer-copyright">
-          <p>© 2025 SITOP. Todos los derechos reservados.</p>
-        </div>
-      </div>
-
     </div>
-  </footer>
 
+    <!-- Fila media: Enlaces de navegación -->
+    <div class="footer-nav">
+      <a href="index.html">Inicio</a>
+      <a href="nosotros.html">Quiénes somos</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="proyectos.html">Proyectos</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+
+    <!-- Fila inferior: Ubicación y copyright -->
+    <div class="footer-bottom">
+      <div class="footer-ubicacion">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>Barrio Buena Vista, Tatumbla, Francisco Morazán, Honduras</span>
+      </div>
+      <div class="footer-copyright">
+        <p>© 2025 SITOP. Todos los derechos reservados.</p>
+      </div>
+    </div>
+
+  </div>
+</footer>
   <!-- Enlace a nuestro archivo JavaScript (siempre al final del body) -->
   <script src="script.js"></script>
 

@@ -1,6 +1,14 @@
 /* ==================== SCRIPT.JS - SITOP ==================== */
 
+/* ==================== 0. NAVBAR ACTIVE PAGE ==================== */
+const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+document.querySelectorAll('.nav-links a').forEach(link => {
+  if (link.getAttribute('href') === currentPage) {
+    link.classList.add('active');
+  }
+});
 /* ==================== 1. NAVBAR ==================== */
+
 const navbar = document.querySelector('.navbar');
 window.addEventListener('scroll', () => {
   if (window.scrollY > 50) {
@@ -287,12 +295,10 @@ window.addEventListener('resize', () => {
 });
 
 /* ==================== 12. MODAL DE PROYECTOS ==================== */
-// Base de datos de proyectos
 const proyectos = {
   1: {
     titulo: "Construcción de pavimento de concreto hidráulico",
     ubicacion: "Bo. El Edén, Choluteca, Honduras",
-
     cliente: "Servicios de Energía",
     servicio: "Construcción de pavimento",
     fechaInicio: "20 de junio de 2025",
@@ -307,7 +313,6 @@ const proyectos = {
   2: {
     titulo: "Construcción de valla publicitaria",
     ubicacion: "Residencial Las Uvas, Tegucigalpa, Honduras",
-
     cliente: "Servicios de Energía",
     servicio: "Construcción de vallas",
     fechaInicio: "2 de mayo del 2025",
@@ -343,21 +348,20 @@ const proyectos = {
     fechaInicio: "Marzo 2026",
     fechaRecepcion: "Abril 2026",
     imagenes: [
-      "img/levantamiento-residencial/levantamiento.jpg",
+      "img/levantamiento-residencial/levantamiento.jpg"
     ]
   },
   5: {
-    titulo: "Supervisión de lotitificacion",
+    titulo: "Supervisión de lotificación",
     ubicacion: "Tencoa, Santa Bárbara, Honduras",
     cliente: "Distrito de Tencoa",
-    servicio: "Supervisión para lotificación, trazado y apertura ",
+    servicio: "Supervisión para lotificación, trazado y apertura",
     fechaInicio: "03 de enero del 2025",
     fechaRecepcion: "20 de diciembre del 2025",
     imagenes: [
-      "img/supervision-lotificacion/supervision.jpg",
+      "img/supervision-lotificacion/supervision.jpg"
     ]
   },
-
   6: {
     titulo: "Construcción de pavimento de concreto",
     ubicacion: "Tencoa, Santa Bárbara, Honduras",
@@ -367,83 +371,121 @@ const proyectos = {
     fechaRecepcion: "Sigue actualmente",
     imagenes: [
       "img/pavimento-tencoa2/paviementoportada.jpg",
-      "img/pavimento-tencoa2/pavimento2.jpg",
+      "img/pavimento-tencoa2/pavimento2.jpg"
     ]
   }
 };
 
-// Variables del carrusel
-let currentImageIndex = 0;
-let currentProjectImages = [];
+// --- Lightbox ---
+let lbImagenes = [];
+let lbIdx = 0;
 
-// Actualizar imagen principal
-function updateMainImage() {
-  const mainImage = document.getElementById('mainImage');
-  if (mainImage && currentProjectImages.length > 0) {
-    mainImage.src = currentProjectImages[currentImageIndex];
-    document.querySelectorAll('.gallery-thumbs img').forEach((thumb, idx) => {
-      if (idx === currentImageIndex) {
-        thumb.classList.add('active-thumb');
-      } else {
-        thumb.classList.remove('active-thumb');
+function abrirLightbox(imagenes, indice) {
+  lbImagenes = imagenes;
+  lbIdx = indice;
+
+  const lb = document.createElement('div');
+  lb.id = 'lightbox';
+  lb.style.cssText = `
+    position:fixed; inset:0; background:rgba(0,0,0,0.9);
+    z-index:99999; display:flex; align-items:center; justify-content:center;
+  `;
+
+  function render() {
+    lb.innerHTML = `
+      <span style="position:absolute;top:20px;right:28px;font-size:2rem;color:#fff;cursor:pointer;line-height:1;" id="lbClose">&times;</span>
+      <button style="position:absolute;left:20px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.15);border:none;color:#fff;font-size:1.8rem;padding:10px 16px;cursor:pointer;border-radius:6px;" id="lbPrev">&#10094;</button>
+      <img src="${lbImagenes[lbIdx]}" style="max-width:90vw;max-height:88vh;border-radius:8px;object-fit:contain;" alt="Foto ampliada">
+      <button style="position:absolute;right:20px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.15);border:none;color:#fff;font-size:1.8rem;padding:10px 16px;cursor:pointer;border-radius:6px;" id="lbNext">&#10095;</button>
+      <span style="position:absolute;bottom:20px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,0.6);font-size:0.85rem;">${lbIdx + 1} / ${lbImagenes.length}</span>
+    `;
+    lb.querySelector('#lbClose').onclick = () => lb.remove();
+    lb.querySelector('#lbPrev').onclick  = () => { lbIdx = (lbIdx - 1 + lbImagenes.length) % lbImagenes.length; render(); };
+    lb.querySelector('#lbNext').onclick  = () => { lbIdx = (lbIdx + 1) % lbImagenes.length; render(); };
+  }
+
+  render();
+  document.body.appendChild(lb);
+
+  lb.addEventListener('click', (e) => { if (e.target === lb) lb.remove(); });
+  document.addEventListener('keydown', function lbKeys(e) {
+    if (!document.getElementById('lightbox')) { document.removeEventListener('keydown', lbKeys); return; }
+    if (e.key === 'ArrowLeft')  { lbIdx = (lbIdx - 1 + lbImagenes.length) % lbImagenes.length; render(); }
+    if (e.key === 'ArrowRight') { lbIdx = (lbIdx + 1) % lbImagenes.length; render(); }
+    if (e.key === 'Escape')     { lb.remove(); document.removeEventListener('keydown', lbKeys); }
+  });
+}
+
+// --- Abrir modal ---
+function openModal(id) {
+  const p = proyectos[id];
+  if (!p) return;
+
+  const tituloEl    = document.getElementById('proyectoTitulo');
+  const ubicacionEl = document.getElementById('proyectoUbicacion');
+  const mosaicoEl   = document.getElementById('modalMosaico');
+
+  if (tituloEl)    tituloEl.textContent = p.titulo;
+  if (ubicacionEl) ubicacionEl.innerHTML = `<i class="fas fa-map-marker-alt"></i> ${p.ubicacion}`;
+
+  // --- Mosaico ---
+  if (mosaicoEl) {
+    mosaicoEl.innerHTML = '';
+
+    // Si solo hay 1 foto: ocupa todo el ancho
+    if (p.imagenes.length === 1) {
+      mosaicoEl.style.gridTemplateColumns = '1fr';
+      mosaicoEl.style.gridTemplateRows    = '320px';
+    } else {
+      mosaicoEl.style.gridTemplateColumns = '2fr 1fr';
+      mosaicoEl.style.gridTemplateRows    = '200px 200px';
+    }
+
+    const visibles   = p.imagenes.slice(0, 3);
+    const restantes  = p.imagenes.length - 3;
+
+    visibles.forEach((src, i) => {
+      const div = document.createElement('div');
+      div.className = 'foto-item';
+      if (i === 0 && p.imagenes.length > 1) div.style.gridRow = 'span 2';
+
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = `Foto ${i + 1}`;
+      div.appendChild(img);
+
+      // Overlay "+N" en la última celda si hay más fotos
+      if (i === visibles.length - 1 && restantes > 0) {
+        const overlay = document.createElement('div');
+        overlay.className = 'foto-mas';
+        overlay.textContent = `+${restantes}`;
+        div.appendChild(overlay);
       }
+
+      div.addEventListener('click', () => abrirLightbox(p.imagenes, i));
+      mosaicoEl.appendChild(div);
     });
   }
-}
 
-// Siguiente imagen
-function nextImage() {
-  if (currentProjectImages.length === 0) return;
-  currentImageIndex = (currentImageIndex + 1) % currentProjectImages.length;
-  updateMainImage();
-}
-
-// Imagen anterior
-function prevImage() {
-  if (currentProjectImages.length === 0) return;
-  currentImageIndex = (currentImageIndex - 1 + currentProjectImages.length) % currentProjectImages.length;
-  updateMainImage();
-}
-
-// Abrir modal
-function openModal(id) {
-  const proyecto = proyectos[id];
-  if (!proyecto) return;
-
-  currentProjectImages = proyecto.imagenes;
-  currentImageIndex = 0;
-
-  const tituloEl = document.getElementById('proyectoTitulo');
-  const ubicacionEl = document.getElementById('proyectoUbicacion');
-  const clienteEl = document.getElementById('proyectoCliente');
-  const servicioEl = document.getElementById('proyectoServicio');
-  const fechaInicioEl = document.getElementById('proyectoFechaInicio');
-  const fechaRecepcionEl = document.getElementById('proyectoFechaRecepcion');
-
-  if (tituloEl) tituloEl.textContent = proyecto.titulo;
-  if (ubicacionEl) ubicacionEl.innerHTML = `<i class="fas fa-map-marker-alt"></i> ${proyecto.ubicacion}`;
-  if (clienteEl) clienteEl.textContent = proyecto.cliente;
-  if (servicioEl) servicioEl.textContent = proyecto.servicio;
-  if (fechaInicioEl) fechaInicioEl.textContent = proyecto.fechaInicio || "No especificada";
-  if (fechaRecepcionEl) fechaRecepcionEl.textContent = proyecto.fechaRecepcion || "No especificada";
-
-  const mainImage = document.getElementById('mainImage');
-  if (mainImage) mainImage.src = proyecto.imagenes[0];
-
+  // Compatibilidad con proyectos.html (que aún usa carrusel clásico)
+  const mainImage    = document.getElementById('mainImage');
   const thumbContainer = document.getElementById('thumbnails');
-  if (thumbContainer) {
-    thumbContainer.innerHTML = '';
-    proyecto.imagenes.forEach((imgSrc, index) => {
-      const thumb = document.createElement('img');
-      thumb.src = imgSrc;
-      thumb.alt = `Imagen ${index + 1}`;
-      if (index === 0) thumb.classList.add('active-thumb');
-      thumb.onclick = () => {
-        currentImageIndex = index;
-        updateMainImage();
-      };
-      thumbContainer.appendChild(thumb);
-    });
+  if (mainImage) {
+    mainImage.src = p.imagenes[0];
+    if (thumbContainer) {
+      thumbContainer.innerHTML = '';
+      p.imagenes.forEach((imgSrc, index) => {
+        const thumb = document.createElement('img');
+        thumb.src = imgSrc;
+        thumb.alt = `Imagen ${index + 1}`;
+        if (index === 0) thumb.classList.add('active-thumb');
+        thumb.onclick = () => {
+          currentImageIndex = index;
+          updateMainImage();
+        };
+        thumbContainer.appendChild(thumb);
+      });
+    }
   }
 
   const modal = document.getElementById('modal');
@@ -453,7 +495,7 @@ function openModal(id) {
   }
 }
 
-// Cerrar modal
+// --- Cerrar modal ---
 function closeModal() {
   const modal = document.getElementById('modal');
   if (modal) {
@@ -462,12 +504,10 @@ function closeModal() {
   }
 }
 
-// Eventos del modal
+// --- Teclado y clic fuera ---
 document.addEventListener('keydown', (e) => {
   const modal = document.getElementById('modal');
   if (modal && modal.style.display === 'flex') {
-    if (e.key === 'ArrowLeft') prevImage();
-    if (e.key === 'ArrowRight') nextImage();
     if (e.key === 'Escape') closeModal();
   }
 });
@@ -478,7 +518,6 @@ if (modalElement) {
     if (e.target === modalElement) closeModal();
   });
 }
-
 /* ==================== 13. FILTROS PARA PROYECTOS.HTML ==================== */
 if (document.querySelector('.filtro-btn')) {
   document.querySelectorAll('.filtro-btn').forEach(btn => {
