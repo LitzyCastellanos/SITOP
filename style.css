@@ -166,6 +166,70 @@ body {
 }
 
 
+/* ==================== BOTON DE VIDEO FLOTANDO EN INDEX ==================== */
+.btn-video-flotante {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 60px;
+    height: 60px;
+    background: #567c8d;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    animation: pulso 2s infinite;
+    z-index: 999;
+    transition: background 0.3s, width 0.3s, border-radius 0.3s;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .btn-video-flotante:hover {
+    background: #f5c518;
+    width: 200px;
+    border-radius: 30px;
+    animation: none;
+  }
+
+  .btn-video-flotante .icono {
+    font-size: 24px;
+    color: white;
+    flex-shrink: 0;
+    transition: color 0.3s;
+  }
+
+  .btn-video-flotante:hover .icono {
+    color: #1a1a1a;
+  }
+
+  .btn-video-flotante .texto-hover {
+    max-width: 0;
+    opacity: 0;
+    overflow: hidden;
+    color: #1a1a1a;
+    font-size: 13px;
+    font-weight: 600;
+    transition: max-width 0.3s, opacity 0.3s, margin 0.3s;
+    margin-left: 0;
+  }
+
+  .btn-video-flotante:hover .texto-hover {
+    max-width: 140px;
+    opacity: 1;
+    margin-left: 8px;
+  }
+
+  @keyframes pulso {
+    0%   { box-shadow: 0 0 0 0 rgba(86,124,141,0.7); }
+    70%  { box-shadow: 0 0 0 16px rgba(86,124,141,0); }
+    100% { box-shadow: 0 0 0 0 rgba(86,124,141,0); }
+  }
+
+
+
 /* ==================== 5. NAVBAR ==================== */
 .navbar {
   position: fixed;

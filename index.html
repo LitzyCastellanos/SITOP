@@ -442,6 +442,25 @@
   <!-- Enlace a nuestro archivo JavaScript (siempre al final del body) -->
   <script src="script.js"></script>
 
+   
+  <!-- Video flotante esquina -->
+<!-- Botón flotante con hover -->
+
+<!-- El botón -->
+<div class="btn-video-flotante" onclick="document.getElementById('video-popup').style.display='flex'">
+  <span class="icono">▶</span>
+  <span class="texto-hover">¡Mira el video!</span>
+</div>
+
+<!-- Popup del video -->
+<div id="video-popup" onclick="this.style.display='none'"
+  style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.75); z-index:1000; align-items:center; justify-content:center;">
+  <video autoplay muted loop playsinline style="width:320px; border-radius:16px; box-shadow:0 8px 40px rgba(0,0,0,0.5);">
+    <source src="img/distrito-tencoa-proyecto.mp4" type="video/mp4">
+  </video>
+</div>
+  <script src="script.js"></script>
+
 </body>
 
 </html>
