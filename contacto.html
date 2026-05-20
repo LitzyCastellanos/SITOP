@@ -101,19 +101,11 @@
   </div>
 
   <!-- FORMULARIO CON HONEYPOT (anti-spam) -->
- <form class="contact-form" name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-  
-  <input type="hidden" name="form-name" value="contacto">
-  
-  <p style="display:none;">
-    <label>No llenes esto: <input name="bot-field"></label>
-  </p>
-  
+ <form class="contact-form" action="https://formspree.io/f/tu-id-formspree" method="POST">
   <input type="text" name="nombre" placeholder="Nombre completo" required>
   <input type="email" name="correo" placeholder="Correo electrónico" required>
   <input type="text" name="servicio" placeholder="Servicio que necesitas">
   <textarea name="mensaje" placeholder="Cuéntanos sobre tu proyecto..." rows="5" required></textarea>
-  
   <button type="submit" class="btn-primary">Enviar mensaje</button>
 </form>
 
