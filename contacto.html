@@ -5,6 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SITOP - Contacto | Ingeniería de Confianza</title>
+
+   <!-- FAVICON - Logo en la pestaña del navegador -->
+  <link rel="icon" type="image/png" sizes="32x32" href="img/sitop-logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/sitop-logo.png">
+  <link rel="shortcut icon" href="img/sitop-logo.ico" type="image/x-icon">
   <meta name="description" content="Contáctanos en SITOP. Estamos en Tegucigalpa, Honduras. WhatsApp, correo, Instagram y formulario para tu proyecto.">
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
@@ -71,38 +76,46 @@
 
         <div class="contact-formulario">
 
-          <div class="contacto-rapido">
-            <a href="https://wa.me/50431836574" target="_blank" class="contacto-enlace">
-              <i class="fab fa-whatsapp"></i>
-              <div>
-                <span>WhatsApp</span>
-                <strong>+504 3183-6574</strong>
-              </div>
-            </a>
-            <a href="https://instagram.com/sitophn" target="_blank" class="contacto-enlace">
-              <i class="fab fa-instagram"></i>
-              <div>
-                <span>Instagram</span>
-                <strong>@sitophn</strong>
-              </div>
-            </a>
-            <a href="mailto:sitophn@gmail.com" class="contacto-enlace">
-              <i class="fas fa-envelope"></i>
-              <div>
-                <span>Correo</span>
-                <strong>sitophn@gmail.com</strong>
-              </div>
-            </a>
-          </div>
+  <div class="contacto-rapido">
+    <a href="https://wa.me/50431836574" target="_blank" class="contacto-enlace">
+      <i class="fab fa-whatsapp"></i>
+      <div>
+        <span>WhatsApp</span>
+        <strong>+504 3183-6574</strong>
+      </div>
+    </a>
+    <a href="https://instagram.com/sitophn" target="_blank" class="contacto-enlace">
+      <i class="fab fa-instagram"></i>
+      <div>
+        <span>Instagram</span>
+        <strong>@sitophn</strong>
+      </div>
+    </a>
+    <a href="mailto:sitophn@gmail.com" class="contacto-enlace">
+      <i class="fas fa-envelope"></i>
+      <div>
+        <span>Correo</span>
+        <strong>sitophn@gmail.com</strong>
+      </div>
+    </a>
+  </div>
 
-          <form class="contact-form" name="contacto" method="POST" data-netlify="true">
-            <input type="text" name="nombre" placeholder="Nombre completo" required>
-            <input type="email" name="correo" placeholder="Correo electrónico" required>
-            <input type="text" name="servicio" placeholder="Servicio que necesitas">
-            <textarea name="mensaje" placeholder="Cuéntanos sobre tu proyecto..." rows="5" required></textarea>
-            <button type="submit" class="btn-primary">Enviar mensaje</button>
-          </form>
-        </div>
+  <!-- FORMULARIO CON HONEYPOT (anti-spam) -->
+ <form class="contact-form" name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+  
+  <input type="hidden" name="form-name" value="contacto">
+  
+  <p style="display:none;">
+    <label>No llenes esto: <input name="bot-field"></label>
+  </p>
+  
+  <input type="text" name="nombre" placeholder="Nombre completo" required>
+  <input type="email" name="correo" placeholder="Correo electrónico" required>
+  <input type="text" name="servicio" placeholder="Servicio que necesitas">
+  <textarea name="mensaje" placeholder="Cuéntanos sobre tu proyecto..." rows="5" required></textarea>
+  
+  <button type="submit" class="btn-primary">Enviar mensaje</button>
+</form>
 
       </div>
 

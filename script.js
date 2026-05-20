@@ -160,24 +160,24 @@ if (footerCopy) {
   footerCopy.textContent = `© ${new Date().getFullYear()} SITOP. Todos los derechos reservados.`;
 }
 
-/* ==================== 8. FORMULARIO ==================== */
+/* ==================== 8. FORMULARIO CON NETLIFY ==================== */
 const form = document.querySelector('.contact-form');
 if (form) {
-  form.addEventListener('submit', e => {
+  form.addEventListener('submit', async (e) => {
     const btn = form.querySelector('button[type="submit"]');
+    const originalText = btn.textContent;
+    
     btn.textContent = 'Enviando...';
-    btn.style.opacity = '0.7';
     btn.disabled = true;
+    
+    // El formulario se envía normalmente a Netlify
+    // No necesitas hacer nada más, Netlify maneja el resto
+    
+    // Opcional: restaurar botón después de 3 segundos
     setTimeout(() => {
-      btn.textContent = '¡Mensaje enviado!';
-      btn.style.background = 'var(--teal)';
-      btn.style.opacity = '1';
-      setTimeout(() => {
-        btn.textContent = 'Enviar mensaje';
-        btn.style.background = '';
-        btn.disabled = false;
-      }, 3000);
-    }, 2000);
+      btn.textContent = originalText;
+      btn.disabled = false;
+    }, 3000);
   });
 }
 
